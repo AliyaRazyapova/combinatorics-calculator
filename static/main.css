@@ -1,0 +1,13 @@
+body{
+    flex-direction: row;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+.block{
+    padding: 50px;
+    transition: 0.3s;
+    margin-right: 30px;
+}

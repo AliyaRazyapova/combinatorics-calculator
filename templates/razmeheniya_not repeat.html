@@ -2,36 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/base.css">
+    <link rel="stylesheet" href="/static/perestanovki_not_repeat.css">
     <title>Размещения без повторений</title>
 </head>
 <body>
     <a class="block" href="/">
         <p>На главную</p>
     </a>
-    {% if error %}
-        <p>{{ error }}</p>
-    {% endif %}
-    <form action="" method="post">
-        <div class="field_1">
-            <label>
-                <b>Введите общее количество элементов:</b>
-            </label>
-            <input type="text" class="text_2" name="num" value="">
+    <div class="error_1">
+        {% if error %}
+            <p>{{ error }}</p>
+        {% endif %}
+    </div>
+    <div class="content">
+        <form action="" method="post">
+            <div class="field_1">
+                <label>
+                    <p>Введите общее количество элементов:</p>
+                </label>
+                <br>
+                <input type="text" class="text_2" name="num" value="">
+            </div>
+            <div class="field_1">
+                <label>
+                    <p>Введите количество элементов в одном размещении:</p>
+                </label>
+                <br>
+                <input type="text" class="text_2" name="num_1" value="">
+            </div>
+            <br>
+            <div class="button_1">
+                <button type="submit" class="button_1_1">
+                    <p>Посчитать</p>
+                </button>
+            </div>
+        </form>
+        <div class="response">
+            {% if response %}
+                <p>{{ response }}</p>
+            {% endif %}
         </div>
-        <div class="field_1">
-            <label>
-                <b>Введите количество элементов в одном размещении:</b>
-            </label>
-            <input type="text" class="text_2" name="num_1" value="">
-        </div>
-        <div class="button_1">
-            <button type="submit" class="button_1_1">
-                Посчитать
-            </button>
-        </div>
-    </form>
-    {% if response %}
-        <p>{{ response }}</p>
-    {% endif %}
+    </div>
 </body>
 </html>
