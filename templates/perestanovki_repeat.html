@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Перестановки с повторениями</title>
+</head>
+<body>
+    <div>
+        <a class="block" href="/">
+        <p>На главную</p>
+    </a>
+    </div>
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+    <form action="" method="post">
+    <div class="field_1">
+            <label>
+                <b>Введите количество элементов для перестановки:</b>
+            </label>
+            <input type="text" class="text_2" name="k" value="">
+        </div>
+        <div class="button_1">
+            <button type="submit" class="button_1_1">
+                Посчитать
+            </button>
+        </div>
+        {% if k %}
+            {% for i in range(k) %}
+                <div class="field_1">
+                    <label>
+                        <b>Введите количество повторений для {{ i+1 }} элемента:</b>
+                    </label>
+                    <input type="text" class="text_2" name="num" value="">
+                </div>
+                <br>
+            {% endfor %}
+            <div class="button_1">
+                <button type="submit" class="button_1_1">
+                    Посчитать
+                </button>
+            </div>
+        {% endif %}
+    </form>
+    {% if response %}
+        <p>{{ response }}</p>
+    {% endif %}
+    {% if error_1 %}
+        <p>{{ error_1 }}</p>
+    {% endif %}
+</body>
+</html>

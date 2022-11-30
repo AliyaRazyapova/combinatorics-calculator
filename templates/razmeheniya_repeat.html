@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Размещения с повторениями</title>
+</head>
+<body>
+    <a class="block" href="/">
+        <p>На главную</p>
+    </a>
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+    <form action="" method="post">
+        <div class="field_1">
+            <label>
+                <b>Введите общее количество элементов:</b>
+            </label>
+            <input type="text" class="text_2" name="num" value="">
+        </div>
+        <div class="field_1">
+            <label>
+                <b>Введите количество элементов в одном размещении:</b>
+            </label>
+            <input type="text" class="text_2" name="num_1" value="">
+        </div>
+        <div class="button_1">
+            <button type="submit" class="button_1_1">
+                Посчитать
+            </button>
+        </div>
+    </form>
+    {% if response %}
+        <p>{{ response }}</p>
+    {% endif %}
+</body>
+</html>
