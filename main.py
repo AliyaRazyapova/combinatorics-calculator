@@ -56,9 +56,7 @@ def perestanovki_not_repeat_list():
     num = request.form.get('num')
     if num:
         try:
-            num = int(num)
-            response = str(math.factorial(num))
-            num = str(num)
+            response = str(math.factorial(int(num)))
             response = 'Число перестановок без повторений из ' + num + ' элементов: ' + response
             return render_template('perestanovki_not_repeat.html', num=num, response=response)
         except:
@@ -82,9 +80,13 @@ def sochetaniay_repeat_list():
     num = request.form.get('num')
     num_1 = request.form.get('num_1')
     if num and num_1:
-        response = str(int((math.factorial(int(num)+int(num_1)-1))/(math.factorial(int(num_1))*math.factorial(int(num)- 1))))
-        response = 'Число сочетаний с повторениями из ' + num + ' по ' + num_1 + ': ' + response
-        return render_template('sochetaniay_repeat.html', num=num, num_1=num_1, response=response)
+        try:
+            response = str(int((math.factorial(int(num)+int(num_1)-1))/(math.factorial(int(num_1))*math.factorial(int(num)- 1))))
+            response = 'Число сочетаний с повторениями из ' + num + ' по ' + num_1 + ': ' + response
+            return render_template('sochetaniay_repeat.html', num=num, num_1=num_1, response=response)
+        except:
+            error = 'Введите корректные данные'
+            return render_template('sochetaniay_repeat.html', error=error)
     else:
         error = 'Введите данные'
         return render_template('sochetaniay_repeat.html', error=error)
@@ -95,9 +97,13 @@ def sochetaniay_not_repeat_list():
     num = request.form.get('num')
     num_1 = request.form.get('num_1')
     if num and num_1:
-        response = str(int(math.factorial(int(num))/(math.factorial(int(num_1))*math.factorial(int(num)-int(num_1)))))
-        response = 'Число сочетаний без повторений из ' + num + ' по ' + num_1 + ': ' + response
-        return render_template('sochetaniay_not_repeat.html', num=num, num_1=num_1, response=response)
+        try:
+            response = str(int(math.factorial(int(num))/(math.factorial(int(num_1))*math.factorial(int(num)-int(num_1)))))
+            response = 'Число сочетаний без повторений из ' + num + ' по ' + num_1 + ': ' + response
+            return render_template('sochetaniay_not_repeat.html', num=num, num_1=num_1, response=response)
+        except:
+            error = 'Введите корректные данные'
+            return render_template('sochetaniay_not_repeat.html', error=error)
     else:
         error = 'Введите данные'
         return render_template('sochetaniay_not_repeat.html', error=error)
@@ -115,9 +121,13 @@ def razmeheniya_repeat_list():
     num = request.form.get('num')
     num_1 = request.form.get('num_1')
     if num and num_1:
-        response = str(int((int(num))**(int(num_1))))
-        response = 'Число размещений c повторениями из ' + num + ' по ' + num_1 + ': ' + response
-        return render_template('razmeheniya_repeat.html', num=num, num_1=num_1, response=response)
+        try:
+            response = str(int((int(num))**(int(num_1))))
+            response = 'Число размещений c повторениями из ' + num + ' по ' + num_1 + ': ' + response
+            return render_template('razmeheniya_repeat.html', num=num, num_1=num_1, response=response)
+        except:
+            error = 'Введите корректные данные'
+            return render_template('razmeheniya_repeat.html', error=error)
     else:
         error = 'Введите данные'
         return render_template('razmeheniya_repeat.html', error=error)
@@ -128,9 +138,13 @@ def razmeheniya_not_repeat_list():
     num = request.form.get('num')
     num_1 = request.form.get('num_1')
     if num and num_1:
-        response = str(int(math.factorial(int(num))/(math.factorial(int(num)-int(num_1)))))
-        response = 'Число размещений без повторений из ' + num + ' по ' + num_1 + ': ' + response
-        return render_template('razmeheniya_not repeat.html', num=num, num_1=num_1, response=response)
+        try:
+            response = str(int(math.factorial(int(num))/(math.factorial(int(num)-int(num_1)))))
+            response = 'Число размещений без повторений из ' + num + ' по ' + num_1 + ': ' + response
+            return render_template('razmeheniya_not repeat.html', num=num, num_1=num_1, response=response)
+        except:
+            error = 'Введите корректные данные'
+            return render_template('razmeheniya_not repeat.html', error=error)
     else:
         error = 'Введите данные'
         return render_template('razmeheniya_not repeat.html', error=error)
