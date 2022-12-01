@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    <meta charset="UTF-8">
-    <title>{{title}}</title>
-    <link rel="stylesheet" href="/static/main.css">
-    <link rel="stylesheet" href="/static/base.css">
-</head>
+        <meta charset="UTF-8">
+        <title>{{title}}</title>
+        <link rel="stylesheet" href="/static/main.css">
+        <link rel="stylesheet" href="/static/base.css">
+    </head>
     <body>
-    <a class="block" href="/">
-        <p>На главную</p>
-    </a>
-    <a class="block" href="/{{title_1}}/repeat/">
-        <p>{{title}}</p>
-        <p>с повторениями</p>
-    </a>
-    <a class="block" href="/{{title_1}}/not_repeat/">
+        <h1>{{ title }}</h1>
+        <div class="content_1">
+            <a class="block" href="/">
+                <p>На главную</p>
+            </a>
+            <a class="block" href="/{{title_1}}/repeat/">
+                <p>{{title}}</p>
+                <p>с повторениями</p>
+            </a>
+            <a class="block" href="/{{title_1}}/not_repeat/">
         <p>{{title}}</p>
         <p>без повторений</p>
     </a>
-</body>
+        </div>
+    </body>
 </html>

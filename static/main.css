@@ -1,4 +1,5 @@
-body{
+.content_1{
+    display: flex;
     flex-direction: row;
     position: absolute;
     transform: translate(-50%, -50%);
