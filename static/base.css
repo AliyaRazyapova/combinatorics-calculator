@@ -31,11 +31,12 @@ button{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 1% 25%;
+    margin: 0 10%;
     background: #fab552;
     text-align: center;
     border-radius: 25px;
     min-height: 350px;
+    padding: 20px;
 }
 
 .response{

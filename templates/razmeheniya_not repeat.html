@@ -3,20 +3,21 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="/static/base.css">
-        <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="/static/style.css">
         <title>Размещения без повторений</title>
     </head>
     <body>
-        <h1>Размещения без повторений</h1>
-        <a class="block" href="/">
-            <p>На главную</p>
-        </a>
-        <div class="error_1">
-            {% if error %}
-                <p>{{ error }}</p>
-            {% endif %}
-        </div>
-        <div class="content">
+        <div class="all">
+            <h1>Размещения без повторений</h1>
+            <a class="block" href="/">
+                <p>На главную</p>
+            </a>
+            <div class="error_1">
+                {% if error %}
+                    <p>{{ error }}</p>
+                {% endif %}
+            </div>
+            <div class="content">
             <form action="" method="post">
                 <div class="field_1">
                     <label>
@@ -44,6 +45,7 @@
                     <p>{{ response }}</p>
                 {% endif %}
             </div>
+        </div>
         </div>
     </body>
 </html>

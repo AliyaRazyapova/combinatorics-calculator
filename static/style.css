@@ -1,7 +1,8 @@
 .block{
-    margin: 0 40%;
+    margin: 5% 25%;
 }
 
-body {
+.all{
     flex-direction: column;
+    display: flex;
 }
